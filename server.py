@@ -10,12 +10,14 @@ print('Сервер запущен')
 #Учим сервер принмать отправленные ему запросы и разделять его на клиента и адрес, с которого прилетел запрос
 client_socket, address = server.accept()
 #Получаем содержимое запроса с клиента
-data = client_socket.recv(1024).decode('utf-8')
-#Вывод полученных данных в терминал
-print(data)
+data = int(client_socket.recv(1024).decode('utf-8'))
+
+#Возведение числа в квадрат
+result = str(data**2)
+
 #Отправляем данные клиенту
 #То что хотим отправить
-content = 'Ответочка от сервера'.encode('utf-8')
+content = result.encode('utf-8')
 #посылаем клиенту
 client_socket.send(content)
 #Сообщение об окончании работы сервера
