@@ -1,5 +1,5 @@
 
 import socket
-#обозначили сокет, который потенциально может быть и клиентским и серверным
-some_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-#Обозначаем сокет серверным. назначаем на него адреы
+
+#Создали серверный сокет
+server = socket.create_connection(('127.0.0.1', 2000))
